@@ -1,0 +1,43 @@
+{
+  "type": "module",
+  "name": "node.js-express-file-structure",
+  "version": "1.0.4",
+  "description": "File structure for Node.js and Express application",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "NODE_ENV=production node app.js",
+    "dev": "NODE_ENV=development nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukasJnsson/node.js-express-mongodb-blog"
+  },
+  "author": "Lukas Jönsson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LukasJnsson/node.js-express-mongodb-blog/issues"
+  },
+  "homepage": "https://github.com/LukasJnsson/node.js-express-mongodb-blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^16.1.4",
+    "ejs": "*",
+    "express": "*",
+    "express-session": "^1.17.3",
+    "mongoose": "*",
+    "mongoose-unique-validator": "^4.0.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*",
+    "nodemon": "*",
+    "supertest": "^6.3.3"
+  }
+}

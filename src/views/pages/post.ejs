@@ -1,0 +1,28 @@
+
+<%- include('../components/head'); %>
+
+   <%- include('../components/nav'); %> 
+
+      <%- include('../components/header'); %>
+
+            <!--Main-->
+            <main>
+                <article class="mb-4">
+                    <div class="container px-4 px-lg-5">
+                        <div class="row gx-4 gx-lg-5 justify-content-center">
+                            <div class="col-md-10 col-lg-8 col-xl-7">
+                            <h2 class="section-heading">  <%= blogPost.title %> </h2>
+                            <p> <%= blogPost.text %> </p>
+                            <img src=" data:image/*;base64, <%= image %> " alt=" <%= blogPost.title %> " class="img-fluid">
+                            <p class="post-meta">
+                                By <a href="/users/<%= blogPost.userid._id %>"> <%= blogPost.userid.username %> </a> 
+                                on <%= blogPost.datePosted.toDateString() %>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+        <%- include('../components/footer'); %>
+
+<%- include('../components/scripts'); %>

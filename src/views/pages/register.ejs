@@ -1,0 +1,44 @@
+
+<%- include('../components/head'); %>
+
+   <%- include('../components/nav'); %> 
+
+      <%- include('../components/header'); %>
+
+            <!--Main-->
+            <main>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg8 col-md-10 mx-auto">
+                            <% if (validationErrors && validationErrors.length > 0) { %>
+                                <ul class="list-group">
+                                    <% for (let i = 0; i < validationErrors.length; i++) { %>
+                                        <li class="list-group-item list-group-item-dark"> <%= validationErrors[i] %> </li>
+                                    <% } %>
+                                </ul>
+                                <% } %>
+                            <form action="/users/register" method="POST">
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls">
+                                        <label> Username </label>
+                                        <input type="text" name="username" id="username" class="form-control" placeholder="Username" value="<%= username %>">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls">
+                                        <label> Password </label>
+                                        <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" id="submit" class="btn btn-primary">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+        <%- include('../components/footer'); %>
+
+<%- include('../components/scripts'); %>

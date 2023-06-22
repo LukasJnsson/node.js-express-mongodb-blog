@@ -1,0 +1,38 @@
+
+<%- include('../components/head'); %>
+
+   <%- include('../components/nav'); %> 
+
+      <%- include('../components/header'); %>
+
+            <!--Main-->
+            <main>
+                <div class="container px-4 px-lg-5">
+                  <div class="row gx-4 gx-lg-5 justify-content-center">
+                      <div class="col-md-10 col-lg-8 col-xl-7">
+                            <!--Div-->
+                            <% if (blogPosts && blogPosts.length > 0) { %>
+                                <% for (let i = 0; i < blogPosts.length; i++) { %>
+                                    <div class="post-preview">
+                                        <!--Populate the wild card with the _id of each post-->
+                                        <a href="/posts/<%= blogPosts[i]._id %>">
+                                            <h2 class="post-title"> <%= blogPosts[i].title %> </h2>
+                                            <h3 class="post-subtitle"> <%= blogPosts[i].text %> </h3>
+                                        </a>
+                                        <!--onClick redirect to endpoint with all posts by sign-->
+                                        <p class="post-meta">
+                                            By <a href="/users/<%= blogPosts[i].userid._id %>"> <%= blogPosts[i].userid.username %> </a> 
+                                            on <%= blogPosts[i].datePosted.toDateString() %>
+                                        </p>
+                                    </div>
+                                <% } %>
+                            <% } %>
+                          <hr class="my-4" />
+                      </div>
+                  </div>
+                </div>
+            </main>
+
+        <%- include('../components/footer'); %>
+
+<%- include('../components/scripts'); %>

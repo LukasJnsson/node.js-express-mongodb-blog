@@ -1,0 +1,50 @@
+
+<%- include('../components/head'); %>
+
+   <%- include('../components/nav'); %> 
+
+      <%- include('../components/header'); %>
+
+            <!--Main-->
+            <main>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg8 col-md-10 mx-auto">
+                            <% if (validationErrors && validationErrors.length > 0) { %>
+                                <ul class="list-group">
+                                    <% for (let i = 0; i < validationErrors.length; i++) { %>
+                                        <li class="list-group-item list-group-item-dark"> <%= validationErrors[i] %> </li>
+                                    <% } %>
+                                </ul>
+                                <% } %>
+                            <form action="/posts/new" method="POST" enctype="multipart/form-data">
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls">
+                                        <label> Title </label>
+                                        <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls">
+                                        <label> Description </label>
+                                        <textarea name="text" id="text" rows="6" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="form-group floating-label-form-group controls">
+                                        <label> Image </label>
+                                        <input type="file" name="image" id="image" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" id="submit" class="btn btn-primary">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+        <%- include('../components/footer'); %>
+
+<%- include('../components/scripts'); %>
