@@ -1,6 +1,6 @@
 <div align="center">
 
-**`Node.js, Express and MongoDB Blog`**
+**`Blog with Node.js, Express, MongoDB, Mocha and Docker`**
 
 ***`Skills`***
 <div align="center">
